@@ -1,0 +1,20 @@
+apiVersion: compute.azure.crossplane.io/v1alpha3
+kind: AKSCluster
+metadata:
+  name: micdemo
+spec:
+  resourceGroupNameRef:
+    name: rg-crossplane
+  vnetSubnetIDRef:
+    name: sub-crossplane
+  location: eastus
+  version: "1.23.8"
+  nodeCount: 1
+  nodeVMSize: Standard_B2s
+  dnsNamePrefix: crossplane-aks
+  disableRBAC: true
+  providerConfigRef:
+    name: default
+  writeConnectionSecretToRef:
+    namespace: crossplane
+    name: micdemo
