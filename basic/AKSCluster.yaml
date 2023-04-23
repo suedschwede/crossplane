@@ -6,9 +6,9 @@ spec:
   resourceGroupNameRef:
     name: rg-crossplane
   vnetSubnetIDRef:
-    name: sub-crossplane
-  location: eastus
-  version: "1.23.8"
+    name: mic-demo-aks
+  location: westeurope
+  version: "1.25.6"
   nodeCount: 1
   nodeVMSize: Standard_B2s
   dnsNamePrefix: crossplane-aks
