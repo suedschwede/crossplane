@@ -3,16 +3,19 @@ kind: KubernetesCluster
 metadata:
   labels:
     testing.upbound.io/example-name: mic-demo
-  name: mic-demo
+  name: mic-demo1
 spec:
   forProvider:
     defaultNodePool:
       - name: default
         nodeCount: 1
         maxCount: 3
+        minCount: 1
         enableAutoScaling: true
         vmSize: Standard_D2_v2
     dnsPrefix: crossplane-aks
+    privateClusterEnabled: false
+    publicNetworkAccessEnabled: true
     identity:
     - type: SystemAssigned
     location: West Europe
