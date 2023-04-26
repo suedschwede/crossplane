@@ -4,11 +4,10 @@ kind: Kustomization
 ## these resources comprise this kustomization
 resources:
   - ../base
-  - namespace.yaml
   - hpa.yaml
 
 ## all resources will be deployed in this namespace
-namespace: podtato-kustomize-production
+namespace: podtato
 
 ## labels to be applied to all resources
 commonLabels:
