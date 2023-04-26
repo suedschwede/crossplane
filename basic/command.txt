@@ -1,1 +1,13 @@
+#Powersehll
+
 az aks get-credentials --resource-group crossplane-rg --name MIC-DEMO
+
+#DOS Command
+cd \
+cd C:\development\kubernetes
+kubectl config use-context rancher-desktop
+kubectl config set-context --current --namespace=argocd
+argocd login --core
+argocd cluster add mic-demo
+
+
