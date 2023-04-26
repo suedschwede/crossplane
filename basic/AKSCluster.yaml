@@ -3,7 +3,7 @@ kind: KubernetesCluster
 metadata:
   labels:
     testing.upbound.io/example-name: mic-demo
-  name: mic-demo1
+  name: mic-demo
 spec:
   forProvider:
     defaultNodePool:
