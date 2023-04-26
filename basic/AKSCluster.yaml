@@ -1,20 +1,23 @@
-apiVersion: compute.azure.crossplane.io/v1alpha3
-kind: AKSCluster
+apiVersion: containerservice.azure.upbound.io/v1beta1
+kind: KubernetesCluster
 metadata:
-  name: micdemo
+  labels:
+    testing.upbound.io/example-name: mic-demo
+  name: mic-demo
 spec:
-  resourceGroupNameRef:
-    name: rg-crossplane
-  vnetSubnetIDRef:
-    name: mic-demo-aks
-  location: westeurope
-  version: "1.25.6"
-  nodeCount: 1
-  nodeVMSize: Standard_B2s
-  dnsNamePrefix: crossplane-aks
-  disableRBAC: true
-  providerConfigRef:
-    name: default
-  writeConnectionSecretToRef:
-    namespace: crossplane
-    name: micdemo
+  forProvider:
+    defaultNodePool:
+      - name: default
+        nodeCount: 1
+        maxCount: 3
+        enableAutoScaling: true
+        vmSize: Standard_D2_v2
+    dnsPrefix: crossplane-aks
+    identity:
+    - type: SystemAssigned
+    location: West Europe
+    kubernetesVersion: "1.25.6"
+    resourceGroupNameRef:
+      name: crossplane-rg
+    tags:
+      Environment: Demo
