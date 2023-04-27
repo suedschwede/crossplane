@@ -22,3 +22,8 @@ kubectl get hpa azure-vote-front-hpa -n vote --watch
 
 # Zeiten
 # Erstellung Kubernetes Cluster        5 Minuten
+
+
+#K6 DOS
+cd "C:\Users\hmayer\OneDrive - MIC Datenverarbeitung GmbH\Documents"
+set "HTTP_PROXY=172.29.249.148:3128" && k6 run .\k6-vote-test.ts
