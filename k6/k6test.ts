@@ -10,7 +10,7 @@ export const options = {
     scenarios: {
       mic_demo: {
         executor: 'constant-vus',
-        vus: 100,
+        vus: 200,
         duration: '120s',
       },
     },
@@ -25,7 +25,7 @@ export default function () {
     },
   };
 
-  var url = 'http://172.21.122.249/';
+  var url = 'http://20.4.139.130/';
 
   const ReqBody = `vote=Blue`;
   
