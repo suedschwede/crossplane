@@ -10,4 +10,7 @@ kubectl config set-context --current --namespace=argocd
 argocd login --core
 argocd cluster add mic-demo
 
+# KUBECTL
 
+kubectl config delete-context mic-demo1
+kubectl get hpa azure-vote-front-hpa -n vote --watch
