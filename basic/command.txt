@@ -1,11 +1,14 @@
-#Powersehll
+Argo
+user: admin
+pass: Ukl6IxVApCE2mGYT
 
+
+Serviceaccount
+az login
 az aks get-credentials --resource-group crossplane-rg --name MIC-DEMO
 
-# Network Ressource Group
-# add inbound rule  (any)
 
-#DOS Command
+Argo
 cd \
 cd C:\development\kubernetes
 kubectl config use-context rancher-desktop
@@ -14,19 +17,20 @@ argocd login --core
 argocd cluster add mic-demo
 
 
-
-# KUBECTL
-
-kubectl config delete-context mic-demo
+DEMO
+kubectl config use-context mic-demo
+kubectl config set-context --current --namespace=vote
+kubectl get pods
+kubectl get services
 kubectl get hpa azure-vote-front-hpa -n vote --watch
 
-# Zeiten
-# Erstellung Kubernetes Cluster        5 Minuten
 
-
-#K6 DOS
+K6
+#Change IP Address in Script !!!!
 cd "C:\Users\hmayer\OneDrive - MIC Datenverarbeitung GmbH\Documents"
 set "HTTP_PROXY=172.29.249.148:3128" && k6 run .\k6-vote-test.ts
 
-# Browser
-http://20.4.139.130/
+
+
+Sonstiges
+kubectl config delete-context mic-demo
